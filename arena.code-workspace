@@ -13,7 +13,7 @@
 			"shd101wyy.markdown-preview-enhanced",
 			"davidanson.vscode-markdownlint",
 			"ms-python.python",
-			"wayou.vscode-todo-highlight"
+			"wayou.vscode-todo-highlight",
 		]
 	},
 	"settings": {"files.eol": "\n"}
