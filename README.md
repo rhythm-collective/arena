@@ -2,6 +2,13 @@
 
 Connected arena.
 
+## Table of Contents <!-- omit in toc -->
+
+- [Arena](#arena)
+  - [Setup](#setup)
+  - [Mongodb Samples](#mongodb-samples)
+  - [NNG Samples](#nng-samples)
+
 ## Setup
 
 1. Run `pip install -e` from root.
@@ -10,10 +17,11 @@ Connected arena.
 
 ## Mongodb Samples
 
-- Note that MongoDB sample will fail unless you have set up an atlas instance.
+Note that MongoDB sample will fail unless you have set up an atlas instance.
 
-Table of Contents
+1. Run `arena_mongo` to trigger the mongo sample path.
 
-- [Arena](#arena)
-  - [Setup](#setup)
-  - [Mongodb Samples](#mongodb-samples)
+## NNG Samples
+
+1. Run `arena_nng` to trigger the nng sample path.
+
