@@ -8,7 +8,7 @@ Sample module for testing mongodb and nng functionality.
 from pymongo import MongoClient
 
 
-def hello_world():
+def hello_world() -> str:
     """ Say something! """
 
     return "Hello World!"
