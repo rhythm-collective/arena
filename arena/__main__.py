@@ -5,6 +5,9 @@ def main():
     from dotenv import load_dotenv
     load_dotenv(verbose=True)
 
+
+def mongo():
+    main()
     import os
     data = {
         "secret_key": os.getenv("SECRET_KEY"),
@@ -15,3 +18,9 @@ def main():
 
     import arena.core.sample as Sample
     Sample.hello_mongo(data['sample_uri'])
+
+
+def nng():
+    main()
+    import arena.core.sample as Sample
+    Sample.hello_nng()

@@ -18,6 +18,7 @@ setup(
         'dnspython>=1.16.0',
         'rope>=0.16.0'],
     entry_points={"console_scripts": [
-        'arena = arena.__main__:main'
+        'arena = arena.__main__:mongo',
+        'arena_nng = arena.__main__:nng',
     ]}
 )
