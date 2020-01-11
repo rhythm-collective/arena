@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"coenraads.bracket-pair-colorizer",
+			"github.vscode-pull-request-github",
+			"eamodio.gitlens",
+			"yzhang.markdown-all-in-one",
+			"shd101wyy.markdown-preview-enhanced",
+			"davidanson.vscode-markdownlint",
+			"ms-python.python",
+			"wayou.vscode-todo-highlight"
+		]
+	},
+	"settings": {}
+}
