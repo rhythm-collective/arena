@@ -14,6 +14,7 @@ setup(
         'pytest>=5.3.2',
         'pynng>=0.5.0',
         'pymongo>=3.10.1',
-        "python-dotenv= > 0.10.3"],
+        'python-dotenv= > 0.10.3'
+        'dnspython>=1.16.0'],
     entry_points={"console_scripts": ['arena = arena.__main__:main']}
 )
