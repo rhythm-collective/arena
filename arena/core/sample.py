@@ -24,3 +24,6 @@ def hello_mongo(uri: str) -> None:
     )["scratch"]
 
     print(scratch_db.last_status())
+
+def hello_nng():
+    pass
