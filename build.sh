@@ -1,0 +1,1 @@
+pyinstaller --workpath=build --noconfirm --distpath=dist arena.spec

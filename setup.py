@@ -16,9 +16,12 @@ setup(
         'pymongo>=3.10.1',
         'python-dotenv>=0.10.3',
         'dnspython>=1.16.0',
-        'rope>=0.16.0'],
+        'rope>=0.16.0',
+        'discord.py>=1.2.5'],
     entry_points={"console_scripts": [
-        'arena_mongo = arena.__main__:mongo',
-        'arena_nng = arena.__main__:nng',
+        'arena_mongo = arena.arena:mongo',
+        'arena_nng = arena.arena:nng',
+        'arena_reg = arena.arena:registration',
+        'arena_disc = arena.arena:discord',
     ]}
 )
