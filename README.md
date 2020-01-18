@@ -52,9 +52,16 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
 
 >These instructions assume you are working on a kubernetes cluster in a cloud service that supports LoadBalancers!
 
-1. Create the cert-manager namespace. `kubectl create namespace cert-manager`.
-2. Navigate to `helmstuff/arena`.
-3. Install Kong
+1. Make sure the DNS record are set up first!
+
+    > ``` bash
+    > A proxy.rhythmcollective.online [loadbalancer-address]
+    > CNAME arena.rhythmcollective.online [proxy.rhythmcollective.online]
+    > ```
+
+2. Create the cert-manager namespace. `kubectl create namespace cert-manager`.
+3. Navigate to `helmstuff/arena`.
+4. Install Kong
 
     > ``` bash
     > helm repo add kong https://charts.konghq.com
@@ -63,7 +70,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     > helm install kong kong/kong --namespace kong --version 1.0.0
     > ```
 
-4. Validate Kong _LoadBalancer_ is set up.
+5. Validate Kong _LoadBalancer_ is set up.
 
     > **Wait for External IP to change from \<pending\> to an address!**
     >
@@ -73,7 +80,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     >
     > **Wait for External IP to change from \<pending\> to an address!**
 
-5. Install cert-manager.
+6. Install cert-manager.
 
     > ``` bash
     > kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.12/deploy/manifests/00-crds.yaml
@@ -83,7 +90,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     > helm install cert-manager --namespace cert-manager --version v0.12.0 jetstack/cert-manager
     > ```
 
-6. Run `helm install arena .` to roll out arena for the first time.
+7. Run `helm install arena .` to roll out arena for the first time.
 
 ### Kubernetes Entity Notes
 
