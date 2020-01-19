@@ -67,7 +67,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     > helm repo add kong https://charts.konghq.com
     > helm repo update
     > kubectl create namespace kong
-    > helm install kong kong/kong --namespace kong --version 1.0.0
+    > helm install kong kong/kong --namespace kong --version 1.0.0 --values config/kong-values.yaml
     > ```
 
 5. Validate Kong _LoadBalancer_ is set up.

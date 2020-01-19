@@ -6,13 +6,9 @@ metadata:
     {{- include "arena.labels" . | nindent 4 }}
 spec:
   ports:
-  - port: 8080
-    name: high
-    protocol: TCP
-    targetPort: 8080
-  - port: 80
+  - port: 433
     name: low
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8443
   selector:
     {{- include "arena.selectorLabels" . | nindent 4 }}

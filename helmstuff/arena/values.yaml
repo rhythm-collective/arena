@@ -5,9 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: gcr.io/kubernetes-e2e-test-images/echoserver
+  repository: docker.pkg.github.com/rhythm-collective/rhythmgame/
   pullPolicy: IfNotPresent
-
 imagePullSecrets: []
 nameOverride: "arena"
 fullnameOverride: "arena-rhythmcollective-online"
@@ -38,6 +37,7 @@ ingress:
   annotations:
     kubernetes.io/tls-acme: "true"
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    configuration.konghq.com: https-only
   hosts:
     - host: arena.rhythmcollective.online
       paths: 
