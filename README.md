@@ -59,9 +59,14 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     > CNAME arena.rhythmcollective.online [proxy.rhythmcollective.online]
     > ```
 
-2. Create the cert-manager namespace. `kubectl create namespace cert-manager`.
-3. Navigate to `helmstuff/arena`.
-4. Install Kong
+2. (Optional) Create a directory called `path_programs` somewhere reasonable, add `path_programs` to your user path variable.
+3. Download [Helm](https://github.com/helm/helm/releases), place the executable in `path_programs` and rename to `helm.exe`.
+4. Download [SOPS](https://github.com/mozilla/sops/releases), place the executable in `path_programs` and rename to `sops.exe`.
+5. Download [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows), place the executable in `path_programs` and rename to `kubectl.exe`.
+6. **TODO:** Create instructions for authenticating with the kubernetes cluster. Steps beyond here assume you have access to a cluster and you have authenticated.
+7. Create the cert-manager namespace. `kubectl create namespace cert-manager`.
+8. Navigate to `helmstuff/arena`.
+9. Install Kong
 
     > ``` bash
     > helm repo add kong https://charts.konghq.com
@@ -70,7 +75,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     > helm install kong kong/kong --namespace kong --version 1.0.0 --values config/kong-values.yaml
     > ```
 
-5. Validate Kong _LoadBalancer_ is set up.
+10. Validate Kong _LoadBalancer_ is set up.
 
     > **Wait for External IP to change from \<pending\> to an address!**
     >
@@ -80,7 +85,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     >
     > **Wait for External IP to change from \<pending\> to an address!**
 
-6. Install cert-manager.
+11. Install cert-manager.
 
     > ``` bash
     > kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.12/deploy/manifests/00-crds.yaml
@@ -90,7 +95,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     > helm install cert-manager --namespace cert-manager --version v0.12.0 jetstack/cert-manager
     > ```
 
-7. Run `helm install arena .` to roll out arena for the first time.
+12. Run `helm install arena .` to roll out arena for the first time.
 
 ### Kubernetes Entity Notes
 
