@@ -56,7 +56,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
 
 1. Create an API key on Digital Ocean.
 
-    - https://cloud.digitalocean.com/account/api/tokens
+    - <https://cloud.digitalocean.com/account/api/tokens>
     - Generate new token.
     - Copy token to the next command.
 
