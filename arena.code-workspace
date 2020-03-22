@@ -16,5 +16,10 @@
 			"wayou.vscode-todo-highlight",
 		]
 	},
-	"settings": {"files.eol": "\n"}
+	"settings": {
+		"files.eol": "\n",
+		"python.venvPath": ".env",
+		"python.pythonPath": "env\\Scripts\\python.exe",
+		"python.linting.pylintPath": ".env\\Scriptss\\pylint.exe"
+	}
 }

@@ -1,10 +1,14 @@
 # Arena
 
-Connected arena.
+Deployment and networking of the arena framework.
 
 ## Table of Contents <!-- omit in toc -->
 
 - [Arena](#arena)
+  - [(Do first) Virtualenv and Updating](#do-first-virtualenv-and-updating)
+    - [Bash (On First Session)](#bash-on-first-session)
+    - [Bash (On Sucessive Sessions)](#bash-on-sucessive-sessions)
+    - [CMD (On Sucessive Sessions)](#cmd-on-sucessive-sessions)
   - [Setup](#setup)
   - [Mongodb Registration and Setup](#mongodb-registration-and-setup)
   - [Adding Entrypoints](#adding-entrypoints)
@@ -16,9 +20,44 @@ Connected arena.
     - [Kubernetes Entity Notes](#kubernetes-entity-notes)
     - [Uninstallation Notes](#uninstallation-notes)
 
+---
+
+## (Do first) Virtualenv and Updating
+
+**These commands should be run before starting development, every time.**
+
+- Install [Python 3.8+](https://www.python.org/downloads/).
+- Install [pip](https://github.com/pypa/get-pip).
+    > `curl https://bootstrap.pypa.io/get-pip.py | python`
+- Install virtualenv:
+    > `pip install virtualenv`
+
+### Bash (On First Session)
+
+``` bash
+virtualenv env ## Creates the virtual environment for python.
+source ./env/Scripts/activate ## Make sure this works. (arena)
+pip install -e . ## Installs  deployment requirements.
+pip install -r requirements.txt ## Installs development requirements.
+```
+
+### Bash (On Sucessive Sessions)
+
+``` bash
+source ./env/Scripts/activate
+```
+
+### CMD (On Sucessive Sessions)
+
+``` cmd
+env\Scripts\activate.bat
+```
+
+---
+
 ## Setup
 
-1. Run `pip install -e` from root.
+1. Run `pip install -e .` from root.
 2. Run `arena` to start arena. *(This currently does nothing.)*
 3. Run `pytest` to execute full test suite.
 
@@ -100,7 +139,7 @@ Note that MongoDB sample will fail unless you have set up an atlas instance.
     > helm repo add kong https://charts.konghq.com
     > helm repo update
     > kubectl create namespace kong
-    > helm install kong kong/kong --namespace kong --version 1.0.0 --values config/kong-values.yaml
+    > helm install kong kong/kong --namespace kong --version 1.3.1 --values config/kong-values.yaml
     > ```
 
 10. Validate Kong _LoadBalancer_ is set up.

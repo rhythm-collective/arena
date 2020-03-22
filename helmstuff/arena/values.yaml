@@ -11,6 +11,8 @@ imagePullSecrets: []
 nameOverride: "arena"
 fullnameOverride: "arena-rhythmcollective-online"
 
+runMigrations: true
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: false

@@ -75,7 +75,7 @@ def discord():
     redirect_uri = 'rhythmcollective://authorize'
     state_fingerprint = 'alfudioashdiofauh'
     discord_scopes = 'identify guilds.join rpc.api messages.read'
-    
+
     from webbrowser import open_new_tab
     open_new_tab(
         "https://discordapp.com/api/oauth2/authorize"
@@ -178,6 +178,7 @@ def create_code_verifier():
     code_verifier = sub('[^a-zA-Z0-9]+', '', code_verifier)
     return code_verifier
 
+
 def create_code_challenge(code_verifier: str):
     from base64 import urlsafe_b64encode
     from hashlib import sha256
@@ -186,11 +187,13 @@ def create_code_challenge(code_verifier: str):
     code_challenge = code_challenge.replace('=', '')
     return code_challenge
 
+
 def sha256(buffer):
     import hashlib
     m = hashlib.sha256()
     m.update(buffer)
     return m.digest()
+
 
 if __name__ == "__main__":
     main()  # Make sure our environment variables are present.
@@ -238,7 +241,8 @@ if __name__ == "__main__":
                 class MyClient(discord.Client):
                     async def on_ready(self):
                         print('Connected!')
-                        print('Username: {0.name}\nID: {0.id}'.format(self.user))
+                        print(
+                            'Username: {0.name}\nID: {0.id}'.format(self.user))
 
                     async def on_message(self, message):
                         # don't respond to ourselves
@@ -255,6 +259,5 @@ if __name__ == "__main__":
 
         else:
             discord()
-        
 
         #simplegui()
